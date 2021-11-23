@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+:root {
+  --header-height: 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  height: var(--header-height);
+  padding: 0 1rem;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.scoreboard div {
+  padding-left: 1rem;
+}
+
+.modal-container {
+  animation: fade-in 0.3s;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal {
+  background-color: white;
+  padding: 2rem 4rem 2rem 3rem;
+  margin: auto;
+}
+.modal * {
+  margin: 0 0 0.5rem 0;
+}
+.modal button {
+  margin: 1rem 0 0 0;
+  padding: 0.3rem 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header h1 {
+  font-size: 1.4rem;
+}
+
+.card-container {
+  display: grid;
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-container div {
+  transition: background-color 0.7s;
 }
